@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width= device-width, initial-scale=1.0">
+        <title>Variable Exercise</title>
+        <style>
+            html{
+                background-color: black;
+            }
+            h1{
+                color: white;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 30px;
+                text-align: center;
+                margin-bottom: 50px;
+            }
+            .btns{
+                justify-content: center;
+                display: grid;
+                grid-template-columns: 100px 100px 100px;
+                column-gap: 20px;
+                row-gap: 20px;
+            }
+            button{
+                border-radius: 30px;
+                width: 100px;
+                padding: 10px 10px 10px 10px;
+                cursor: pointer;
+                background: linear-gradient(120deg, black, rgb(37, 37, 37));
+                border: solid 2px white;
+                color: white;
+                transition: 0.2s;
+            }
+            button:hover{
+                background: linear-gradient(120deg, rgb(37,37,37), black);
+                box-shadow: 0px 0px 8px whitesmoke;
+            }
+            p{
+                color:white;
+                font-size: 20px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                margin: 0;
+                margin-top: 10px;
+            }
+            .para{
+                margin-top: 30px;
+                display: flex;
+                text-align: center;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            #Remain{
+                font-size: 15px;
+                letter-spacing: 1px;
+            }
+            #message{
+                color: red;
+                font-size: 15px;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            Cart Quantity
+        </h1>
+        <div class="btns">
+            <button onclick="
+                if(variable1<=10 && count>=0){
+                    check = count;
+                    reDo = variable1;
+                    variable1 += 1;
+                    count = 10 - variable1;
+                    if(count < 0){
+                    document.getElementById('message').textContent = 'The Cart is Already full. No Space left.';
+                    }
+                    else{
+                    document.getElementById('cart').textContent = 'Cart: ' + variable1;
+                    document.getElementById('Remain').textContent = 'Remaining Space: ' +count;
+                    document.getElementById('message').textContent = ''}
+                    }
+                else {
+                document.getElementById('message').textContent = 'The Cart is full.'; }
+                    " >
+                Add to Cart
+            </button>
+            <button onclick="
+                    if(variable1>0 && count<=10){
+                    variable1 -= 1;
+                    count += 1;
+                    document.getElementById('cart').textContent = 'Cart: '+variable1;
+                    document.getElementById('Remain').textContent = 'Remaining Space: '+count;
+                    document.getElementById('message').textContent = '';
+                    }
+                else {
+                document.getElementById('message').textContent = 'The Cart is Already Empty.'; }
+                    " >
+                Remove from Cart
+            </button>
+            <button onclick="
+                if(variable1<=10){
+                check = count;
+                reDo = variable1;
+                variable1 += 2;
+                count = 10 - variable1;
+                    if(count < 0){
+                        document.getElementById('message').textContent = 'Not enough space remaining in cart';
+                        count = check;
+                        variable1 = reDo;
+                    }
+                    else{
+                        document.getElementById('cart').textContent = 'Cart: '+variable1;
+                        document.getElementById('Remain').textContent = 'Remaining Space: '+count;
+                        document.getElementById('message').textContent = '';
+                        }
+                }
+                else {
+                document.getElementById('message').textContent = 'The Cart is Already full.'; }
+                    ">
+                +2
+            </button>
+            <button onclick="
+                    if(variable1 > 0){
+                    check = count;
+                    reDo = variable1;
+                    variable1 -= 2;
+                    count += 2;
+                    if(count > 10){
+                        document.getElementById('message').textContent = 'Not enough items left in the cart';
+                        count = check;
+                        variable1 = reDo;
+                    }
+                    else{
+                        document.getElementById('cart').textContent = 'Cart: '+variable1;
+                        document.getElementById('Remain').textContent = 'Remaining Space: '+count;
+                        document.getElementById('message').textContent = '';
+                        }
+                    }
+                else {
+                document.getElementById('message').textContent = 'The Cart is Already Empty.'; }
+                    " >
+                -2
+            </button>
+            <button onclick="
+                    if(variable1<=10){
+                    check = count;
+                    reDo = variable1;
+                    variable1 += 3;
+                    count = 10 - variable1;
+                    if(count < 0){
+                        document.getElementById('message').textContent = 'Not enough space remaining in cart';
+                        count = check;
+                        variable1 = reDo;
+                    }
+                    else{
+                        document.getElementById('cart').textContent = 'Cart: '+variable1;
+                        document.getElementById('Remain').textContent = 'Remaining Space: '+count;
+                        document.getElementById('message').textContent = '';
+                        }
+                    }
+                else {
+                document.getElementById('message').textContent = 'The Cart is Already full.'; }" >
+                +3
+            </button>
+            <button onclick="
+                    if(variable1>0){
+                    check = count;
+                    reDo = variable1;
+                    variable1 -= 3;
+                    count += 3;
+                    if(count > 10){
+                        document.getElementById('message').textContent = 'Not enough items left in the cart';
+                        count = check;
+                        variable1 = reDo;
+                    }
+                    else{
+                        document.getElementById('cart').textContent = 'Cart: '+variable1;
+                        document.getElementById('Remain').textContent = 'Remaining Space: '+count;
+                        document.getElementById('message').textContent = '';
+                        }
+                    }
+                else {
+                document.getElementById('message').textContent = 'The Cart is Already Empty.'; }
+                    " >
+                -3
+            </button>
+            <button onclick="
+                if(variable1<=10){
+                    check = count;
+                    reDo = variable1;
+                    variable1 += 4;
+                    count = 10 - variable1;
+                    if(count < 0){
+                        document.getElementById('message').textContent = 'Not enough space remaining in cart';
+                        count = check;
+                        variable1 = reDo;
+                    }
+                    else{
+                        document.getElementById('cart').textContent = 'Cart: '+variable1;
+                        document.getElementById('Remain').textContent = 'Remaining Space: '+count;
+                        document.getElementById('message').textContent = '';
+                    }
+                }
+                else {
+                document.getElementById('message').textContent = 'The Cart is Already full.'; }
+                    " >
+                +4
+            </button>
+            <button onclick="
+                    if(variable1<=10){
+                    check = count;
+                    reDo = variable1;
+                    variable1 += 5;
+                    count = 10 - variable1;
+                    if(count < 0){
+                        document.getElementById('message').textContent = 'Not enough space remaining in cart';
+                        count = check;
+                        variable1 = reDo;
+                    }
+                    else{
+                        document.getElementById('cart').textContent = 'Cart: '+variable1;
+                        document.getElementById('Remain').textContent = 'Remaining Space: '+count;
+                        document.getElementById('message').textContent = '';
+                        }
+                    }
+                else {
+                document.getElementById('message').textContent = 'The Cart is Already full.'; }
+                    " >
+                +5
+            </button>
+            <button onclick="
+                    variable1 = 0;
+                    count = 10;
+                    document.getElementById('cart').textContent = 'Cart: ' + variable1;
+                    document.getElementById('Remain').textContent = 'Remaining Space: ' + count;
+                    document.getElementById('message').textContent = 'Reset Successful.';
+                    ">
+                Reset Cart
+            </button> 
+        </div>
+        <div class="para">
+            <p id="cart">Cart: 0</p>
+            <p id="Remain">Remaining Space: 10</p>
+            <p id="message"></p>
+        </div>
+        <script>
+           let variable1 = 0;
+           let count=10;
+           let check, reDo;
+        </script>
+    </body>
+</html>
